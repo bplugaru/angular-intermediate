@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChuckComponent implements OnInit {
 
+  public joke = 'Chuck Norris can text using his walkie talkie and without batteries.';
+
+  public comment = '';
+  public comments = [];
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addComment(comment){
+    this.comments.push(comment);
+    this.comment = '';
   }
 
 }
