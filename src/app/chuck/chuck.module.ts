@@ -11,7 +11,9 @@ import {
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [ChuckComponent],
+  declarations: [
+    ChuckComponent,
+  ],
   exports: [ChuckComponent],
   imports: [
     CommonModule,

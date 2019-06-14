@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="container">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Chuck Norris</mat-card-title>
@@ -24,6 +24,16 @@
       <mat-icon matSuffix (click)="addComment(comment)">send</mat-icon>
 
     </mat-form-field>
+    <ng-container [ngSwitch]="comments.length">
+      <h3 *ngSwitchCase="0">No comments no fun</h3>
+      <h3 *ngSwitchCase="1">I'm sad:( only one: {{ comments[0] }}</h3>
+      <ng-container *ngSwitchDefault>
+        <mat-list-item *ngFor="let comment of comments">
+         <h3>{{ comment }}</h3>
+        </mat-list-item>
+      </ng-container>
+    </ng-container>
   </mat-card-footer>
+
 </mat-card>
-{{ comments | json }}
+
