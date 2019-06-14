@@ -9,12 +9,13 @@
     alt="Photo of Chuck Norris">
   <mat-card-content>
     <p>
-      {{ joke }}
+      {{ joke?.value }}
     </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>LIKE</button>
     <button mat-button>SHARE</button>
+    <button mat-button (click)="getJoke()">AGAIN?</button>
   </mat-card-actions>
   <mat-card-footer>
     <mat-form-field class="comment" appearance="standard">

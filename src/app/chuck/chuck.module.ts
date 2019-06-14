@@ -9,11 +9,13 @@ import {
   MatListModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [ChuckComponent],
   exports: [ChuckComponent],
   imports: [
     CommonModule,
+    HttpClientModule,
     FormsModule,
     MatCardModule,
     MatButtonModule,
