@@ -13,9 +13,12 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-    <button mat-button (click)="getJoke()">AGAIN?</button>
+    <button mat-raised-button [color]="like ? 'accent' : ''" (click)="setLike()">
+      LIKE
+      <mat-icon *ngIf="like">favorite</mat-icon>
+    </button>
+    <button mat-raised-button>SHARE</button>
+    <button mat-raised-button (click)="getJoke()">AGAIN?</button>
   </mat-card-actions>
   <mat-card-footer>
     <mat-form-field class="comment" appearance="standard">

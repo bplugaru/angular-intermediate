@@ -1,16 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-export interface Joke {
-  categories: [];
-  created_at: string;
-  icon_url: string;
-  id: string;
-  updated_at: string;
-  url: string;
-  value: string;
-
-}
+import { Component, OnInit, Injector } from '@angular/core';
+import { Joke, ChuckService } from './chuck.service';
+import { LikeService } from './like.service';
 
 @Component({
   selector: 'app-chuck',
@@ -23,20 +13,28 @@ export class ChuckComponent implements OnInit {
   public comment = '';
   public comments = [];
 
-  constructor(private http: HttpClient) { }
+  public like = false;
+  constructor(
+    private chuckService: ChuckService,
+    private injector: Injector
+  ) { }
 
   ngOnInit() {
     this.getJoke();
   }
 
-  getJoke(){
-    this.http.get('https://api.chucknorris.io/jokes/random').subscribe( (j: Joke) => this.joke = j);
-
+  getJoke() {
+    this.chuckService.getJoke().subscribe(joke => this.joke = joke);
   }
 
-  addComment(comment){
+  addComment(comment) {
     this.comments.push(comment);
     this.comment = '';
   }
 
+  setLike() {
+    const cs = this.injector.get<LikeService>(LikeService);
+    cs.setLike();
+    this.like = cs.getLikes();
+  }
 }
