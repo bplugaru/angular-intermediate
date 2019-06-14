@@ -1,29 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChuckComponent } from './chuck.component';
-import {
-  MatCardModule,
-  MatButtonModule,
-  MatInputModule,
-  MatIconModule,
-  MatListModule
-} from '@angular/material';
+
+import { ChuckRoutingModule } from './chuck-routing.module';
+
+import { ChuckViewComponent } from './chuck-view/chuck-view.component';
+import { ChuckAddComponent } from './chuck-add/chuck-add.component';
+import { MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatListModule, MatInputModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
-  declarations: [
-    ChuckComponent,
-  ],
-  exports: [ChuckComponent],
+  declarations: [ChuckViewComponent, ChuckAddComponent],
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
+
+    ChuckRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule,
     MatIconModule,
-    MatListModule
+    MatFormFieldModule,
+    MatListModule,
+    MatInputModule
+
   ]
 })
 export class ChuckModule { }

@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <app-chuck></app-chuck>
- </div>
-
-<router-outlet></router-outlet>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="['/']">View</a>
+      <a mat-button [routerLink]="['/add']">Add</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

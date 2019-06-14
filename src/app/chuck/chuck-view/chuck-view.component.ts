@@ -1,13 +1,14 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { Joke, ChuckService } from './chuck.service';
-import { LikeService } from './like.service';
+import { ChuckService, Joke } from '../services/chuck.service';
+import { LikeService } from '../services/like.service';
 
 @Component({
-  selector: 'app-chuck',
-  templateUrl: './chuck.component.html',
-  styleUrls: ['./chuck.component.scss']
+  selector: 'app-chuck-view',
+  templateUrl: './chuck-view.component.html',
+  styleUrls: ['./chuck-view.component.scss']
 })
-export class ChuckComponent implements OnInit {
+export class ChuckViewComponent implements OnInit {
+
   public joke: Joke;
 
   public comment = '';

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChuckComponent } from './chuck.component';
+import { ChuckViewComponent } from './chuck-view.component';
 
-describe('ChuckComponent', () => {
-  let component: ChuckComponent;
-  let fixture: ComponentFixture<ChuckComponent>;
+describe('ChuckViewComponent', () => {
+  let component: ChuckViewComponent;
+  let fixture: ComponentFixture<ChuckViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChuckComponent ]
+      declarations: [ ChuckViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChuckComponent);
+    fixture = TestBed.createComponent(ChuckViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
