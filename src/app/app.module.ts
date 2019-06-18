@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChuckModule } from './chuck/chuck.module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,8 +13,8 @@ import { ChuckModule } from './chuck/chuck.module';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule,
-    ChuckModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

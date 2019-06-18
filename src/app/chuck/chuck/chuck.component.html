@@ -1,0 +1,46 @@
+<div class="grid">
+  <mat-card class="container">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        <a [routerLink]="['/view']">Chuck Norris</a></mat-card-title>
+      <mat-card-subtitle>Dragon breath</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image
+      src="http://images02.military.com/sites/default/files/styles/full/public/media/veteran-jobs/content-images/2016/03/chucknorris.jpg"
+      alt="Photo of Chuck Norris">
+    <mat-card-content>
+      <p>
+        {{ joke?.value }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [color]="like ? 'accent' : ''" (click)="setLike()">
+        LIKE
+        <mat-icon *ngIf="like">favorite</mat-icon>
+      </button>
+      <button mat-raised-button>SHARE</button>
+      <button mat-raised-button (click)="getJoke()">AGAIN?</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-form-field class="comment" appearance="standard">
+        <textarea matInput placeholder="Comment" [ngModel]="comment" (ngModelChange)="comment=$event"></textarea>
+  
+        <mat-icon matSuffix (click)="addComment(comment)">send</mat-icon>
+  
+      </mat-form-field>
+      <ng-container [ngSwitch]="comments.length">
+        <h3 *ngSwitchCase="0">No comments no fun</h3>
+        <h3 *ngSwitchCase="1">I'm sad:( only one: {{ comments[0] }}</h3>
+        <ng-container *ngSwitchDefault>
+          <mat-list-item *ngFor="let comment of comments">
+           <h3>{{ comment }}</h3>
+          </mat-list-item>
+        </ng-container>
+      </ng-container>
+    </mat-card-footer>
+  
+  </mat-card>
+  <router-outlet></router-outlet>
+  
+</div>

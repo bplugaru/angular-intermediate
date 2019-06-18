@@ -1,6 +1,6 @@
 import { Component, OnInit, Injector } from '@angular/core';
-import { Joke, ChuckService } from './chuck.service';
-import { LikeService } from './like.service';
+import { Joke, ChuckService } from '../services/chuck.service';
+import { LikeService } from '../services/like.service';
 
 @Component({
   selector: 'app-chuck',

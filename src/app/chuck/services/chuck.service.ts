@@ -14,11 +14,29 @@ export interface Joke {
 
 }
 
+export interface Biografy{
+  name: string,
+  dob: Date,
+  nationality: string,
+  movies: string[]
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChuckService {
+
+  private bio:Biografy = {
+    name: 'Chuck Noris',
+    dob: new Date(1940, 2, 10),
+    nationality: 'American',
+    movies: [
+      'Operatiunea Delta Force',
+      'Lupul singuratic',
+      'Disparut in misiune',
+      'Drumul dragonului'
+    ]
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -26,4 +44,8 @@ export class ChuckService {
     return this.http.get<Joke>('https://api.chucknorris.io/jokes/random');
 
   }
+
+  getBio(){
+    return this.bio;
+  } 
 }
