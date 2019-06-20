@@ -47,7 +47,14 @@ export class ChuckService {
     }
     return this.bio;
   } 
-  setBio(bio: Biografy) {
+  createBio(bio: Biografy) {
     window.localStorage.setItem('bio', JSON.stringify(bio));
+  }
+  updateBio(bio: Biografy) {
+    window.localStorage.setItem('bio', JSON.stringify(bio));
+  }
+  deleteBio(){
+    window.localStorage.removeItem('bio');
+    return Promise.resolve();
   }
 }

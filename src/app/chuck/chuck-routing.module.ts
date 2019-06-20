@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChuckViewComponent } from './chuck-view/chuck-view.component';
 import { ChuckAddComponent } from './chuck-add/chuck-add.component';
 import { ChuckComponent } from './chuck/chuck.component';
+import { ChuckEditComponent } from './chuck-edit/chuck-edit.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'add',
         component: ChuckAddComponent
+      },
+      {
+        path: 'edit',
+        component: ChuckEditComponent
       }
     ]
   },

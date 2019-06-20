@@ -11,26 +11,30 @@ import {
   MatDatepickerModule,
   MatNativeDateModule
 } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChuckRoutingModule } from './chuck-routing.module';
 import { ChuckViewComponent } from './chuck-view/chuck-view.component';
 import { ChuckAddComponent } from './chuck-add/chuck-add.component';
+import { ChuckEditComponent } from './chuck-edit/chuck-edit.component';
 @NgModule({
   declarations: [
     ChuckComponent,
     ChuckViewComponent,
-    ChuckAddComponent
+    ChuckAddComponent,
+    ChuckEditComponent
   ],
   exports: [
     ChuckComponent,
     ChuckAddComponent,
-    ChuckViewComponent
+    ChuckViewComponent,
+    ChuckEditComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
     MatInputModule,

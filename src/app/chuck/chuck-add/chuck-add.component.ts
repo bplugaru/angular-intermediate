@@ -21,7 +21,7 @@ export class ChuckAddComponent implements OnInit {
   ngOnInit() {
   }
   onSaveBio() {
-    this.chuckService.setBio(this.bio);
+    this.chuckService.createBio(this.bio);
     this.router.navigate(['/view'])
   }
 

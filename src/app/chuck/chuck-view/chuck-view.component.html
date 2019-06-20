@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-title>Chuck Bio</mat-card-title>
   <mat-card-content>
-    <mat-list >
+    <mat-list *ngIf="bio">
       <mat-list-item><strong>Name: </strong>{{ bio.name }}</mat-list-item>
       <mat-list-item><strong>Date of birth: </strong>{{ bio.dob | date }}</mat-list-item>
       <mat-list-item><strong>Nationality: </strong>{{ bio.nationality}}</mat-list-item>
@@ -9,8 +9,11 @@
         {{ bio.movies}}
       </mat-list-item>
     </mat-list>
+    <h3 *ngIf="!bio">No bio</h3>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button [routerLink]="['/add']">Add bio</button>
+    <button mat-raised-button [routerLink]="['/add']" *ngIf="!bio">Add bio</button>
+    <button mat-raised-button (click)="deleteBio()" *ngIf="bio">Delete bio</button>
+    <button mat-raised-button [routerLink]="['/edit']" *ngIf="bio">Edit bio</button>
   </mat-card-actions>
 </mat-card>

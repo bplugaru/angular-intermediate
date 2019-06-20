@@ -16,4 +16,8 @@ export class ChuckViewComponent implements OnInit {
     this.bio = this.chuckService.getBio();
   }
 
+  async deleteBio(){
+    await this.chuckService.deleteBio();
+    this.bio = null;
+  }
 }
