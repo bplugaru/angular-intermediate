@@ -57,4 +57,16 @@ export class ChuckService {
     window.localStorage.removeItem('bio');
     return Promise.resolve();
   }
+
+  getErrorMessage(field){
+    console.log(field)
+    let error ='';
+    if(field.hasError('required')){
+      error = `${field.name} is required` 
+    }
+    if(field.hasError('VerifyNameValidatorError')){
+      error = 'Realy dude???'
+    }
+    return error;
+  }
 }

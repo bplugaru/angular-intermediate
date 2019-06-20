@@ -17,6 +17,7 @@ import { ChuckRoutingModule } from './chuck-routing.module';
 import { ChuckViewComponent } from './chuck-view/chuck-view.component';
 import { ChuckAddComponent } from './chuck-add/chuck-add.component';
 import { ChuckEditComponent } from './chuck-edit/chuck-edit.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     ChuckComponent,
@@ -43,7 +44,8 @@ import { ChuckEditComponent } from './chuck-edit/chuck-edit.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ChuckRoutingModule
+    ChuckRoutingModule,
+    SharedModule
   ]
 })
 export class ChuckModule { }

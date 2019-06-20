@@ -24,5 +24,7 @@ export class ChuckAddComponent implements OnInit {
     this.chuckService.createBio(this.bio);
     this.router.navigate(['/view'])
   }
-
+  getErrorMessage(field){
+    return this.chuckService.getErrorMessage(field); 
+  }
 }

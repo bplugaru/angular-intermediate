@@ -1,17 +1,21 @@
-<form (submit)="onSaveBio()">
+<form #bioForm="ngForm" (submit)="bioForm.form.valid && onSaveBio()">
   <mat-card>
     <mat-card-title>Add Chuck bio</mat-card-title>
     <mat-card-content class="container">
       <mat-form-field>
-        <input matInput placeholder="Name" [(ngModel)]="bio.name" name="name">
+        <input matInput placeholder="Name" [(ngModel)]="bio.name" #name="ngModel" name="name" required maxlength="30" appVerifyName="Chuck Norris">
+        <mat-error *ngIf="name.invalid">{{getErrorMessage(name)}}</mat-error>
+
       </mat-form-field>
       <mat-form-field>
-        <input matInput [matDatepicker]="dob" placeholder="Date of birth" [(ngModel)]="bio.dob" name="dob">
+        <input matInput [matDatepicker]="dob" placeholder="Date of birth"  #dob="ngModel" [(ngModel)]="bio.dob" name="dob">
         <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
         <mat-datepicker #dob></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
-        <textarea matInput placeholder="Nationality" [(ngModel)]="bio.nationality" name="nationality"></textarea>
+        <textarea matInput placeholder="Nationality" #nationality="ngModel" [(ngModel)]="bio.nationality" name="nationality" required></textarea>
+        <mat-error *ngIf="nationality.invalid">{{getErrorMessage(nationality)}}</mat-error>
+
       </mat-form-field>
 
       <mat-form-field>
@@ -22,7 +26,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button [routerLink]="['/view']">Back</button>
-      <button mat-raised-button type="submit">Save bio</button>
+      <button mat-raised-button color="primary" type="submit">Save bio</button>
 
     </mat-card-actions>
   </mat-card>
