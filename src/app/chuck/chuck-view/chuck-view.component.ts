@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChuckService, Biografy } from '../services/chuck.service';
+import { ChuckService } from '../services/chuck.service';
+import { Biografy } from "../services/biografy.model";
 
 @Component({
   selector: 'app-chuck-view',

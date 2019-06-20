@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Biografy } from './biografy.model';
 
 
 export interface Joke {
@@ -14,29 +15,23 @@ export interface Joke {
 
 }
 
-export interface Biografy{
-  name: string,
-  dob: Date,
-  nationality: string,
-  movies: string[]
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class ChuckService {
 
-  private bio:Biografy = {
-    name: 'Chuck Noris',
-    dob: new Date(1940, 2, 10),
-    nationality: 'American',
-    movies: [
-      'Operatiunea Delta Force',
-      'Lupul singuratic',
-      'Disparut in misiune',
-      'Drumul dragonului'
-    ]
-  };
+  private bio:Biografy;
+  // {
+  //   name: 'Chuck Noris',
+  //   dob: new Date(1940, 2, 10),
+  //   nationality: 'American',
+  //   movies: [
+  //     'Operatiunea Delta Force',
+  //     'Lupul singuratic',
+  //     'Disparut in misiune',
+  //     'Drumul dragonului'
+  //   ]
+  // };
 
   constructor(private http: HttpClient) { }
 
@@ -46,6 +41,13 @@ export class ChuckService {
   }
 
   getBio(){
+    const bio = window.localStorage.getItem('bio');
+    if(bio){
+      return JSON.parse(bio);
+    }
     return this.bio;
   } 
+  setBio(bio: Biografy) {
+    window.localStorage.setItem('bio', JSON.stringify(bio));
+  }
 }

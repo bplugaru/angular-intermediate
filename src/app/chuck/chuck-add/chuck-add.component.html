@@ -1,3 +1,29 @@
-<p>
-  chuck-add works!
-</p>
+<form (submit)="onSaveBio()">
+  <mat-card>
+    <mat-card-title>Add Chuck bio</mat-card-title>
+    <mat-card-content class="container">
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="bio.name" name="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="dob" placeholder="Date of birth" [(ngModel)]="bio.dob" name="dob">
+        <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+        <mat-datepicker #dob></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Nationality" [(ngModel)]="bio.nationality" name="nationality"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Beste movie" multiple [(ngModel)]="bio.movies" name="movies">
+          <mat-option *ngFor="let movie of availableMovies" [value]="movie">{{ movie }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/view']">Back</button>
+      <button mat-raised-button type="submit">Save bio</button>
+
+    </mat-card-actions>
+  </mat-card>
+</form>

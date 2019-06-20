@@ -1,8 +1,16 @@
-<ul>
-  <li><strong>Name</strong>{{ bio.name }}</li>
-  <li><strong>Date of birth</strong>{{ bio.date }}</li>
-  <li><strong>Nationality</strong>{{ bio.nationality}}</li>
-  <li><strong>Movies</strong>
-  {{ bio.movies}}
-  </li>
-</ul>
+<mat-card>
+  <mat-card-title>Chuck Bio</mat-card-title>
+  <mat-card-content>
+    <mat-list >
+      <mat-list-item><strong>Name: </strong>{{ bio.name }}</mat-list-item>
+      <mat-list-item><strong>Date of birth: </strong>{{ bio.dob | date }}</mat-list-item>
+      <mat-list-item><strong>Nationality: </strong>{{ bio.nationality}}</mat-list-item>
+      <mat-list-item><strong>Movies: </strong>
+        {{ bio.movies}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/add']">Add bio</button>
+  </mat-card-actions>
+</mat-card>

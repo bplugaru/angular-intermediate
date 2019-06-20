@@ -6,7 +6,10 @@ import {
   MatButtonModule,
   MatInputModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,6 +36,9 @@ import { ChuckAddComponent } from './chuck-add/chuck-add.component';
     MatInputModule,
     MatIconModule,
     MatListModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ChuckRoutingModule
   ]
 })
