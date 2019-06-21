@@ -23,7 +23,7 @@ export class ChuckEditComponent implements OnInit {
   ngOnInit() {
     const bio = this.chuckService.getBio();
     this.bioFormGroup = new FormGroup({
-      name: new FormControl(bio.name, [
+      name: new FormControl(bio.fullName, [
         Validators.required, 
         verifyNameValidator(/Chuck Norris/i)
       ]),

@@ -1,0 +1,6 @@
+<form [formGroup]="form" class="container">
+  <ng-container *ngFor="let field of config" appDynamicField [config]="field" [formGroup]="form">
+
+  </ng-container>
+
+</form>

@@ -3,8 +3,8 @@
     <mat-card-title>Add Chuck bio</mat-card-title>
     <mat-card-content class="container">
       <mat-form-field>
-        <input matInput placeholder="Name" [(ngModel)]="bio.name" #name="ngModel" name="name" required maxlength="30" appVerifyName="Chuck Norris">
-        <mat-error *ngIf="name.invalid">{{getErrorMessage(name)}}</mat-error>
+        <input matInput placeholder="Fullname" [(ngModel)]="bio.fullName" #fullName="ngModel" name="fullName" required maxlength="30" appVerifyName="Chuck Norris">
+        <mat-error *ngIf="fullName.invalid">{{getErrorMessage(fullName)}}</mat-error>
 
       </mat-form-field>
       <mat-form-field>

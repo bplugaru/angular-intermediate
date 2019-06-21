@@ -1,5 +1,5 @@
 export class Biografy {
-  name: string;
+  fullName: string;
   dob: Date;
   nationality: string;
   movies: string[];

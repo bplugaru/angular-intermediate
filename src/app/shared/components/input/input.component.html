@@ -1,0 +1,4 @@
+<mat-form-field [formGroup]="group">
+  <input matInput placeholder="{{ config.placeholder }}" [formControlName]="config.name">
+  <mat-error *ngIf="group.get(config.name).invalid">{{getErrorMessage(config.name, group.get(config.name))}}</mat-error>
+</mat-form-field>

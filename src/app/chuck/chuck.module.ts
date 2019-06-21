@@ -18,12 +18,14 @@ import { ChuckViewComponent } from './chuck-view/chuck-view.component';
 import { ChuckAddComponent } from './chuck-add/chuck-add.component';
 import { ChuckEditComponent } from './chuck-edit/chuck-edit.component';
 import { SharedModule } from '../shared/shared.module';
+import { ChuckDynamicComponent } from './chuck-dynamic/chuck-dynamic.component';
 @NgModule({
   declarations: [
     ChuckComponent,
     ChuckViewComponent,
     ChuckAddComponent,
-    ChuckEditComponent
+    ChuckEditComponent,
+    ChuckDynamicComponent
   ],
   exports: [
     ChuckComponent,

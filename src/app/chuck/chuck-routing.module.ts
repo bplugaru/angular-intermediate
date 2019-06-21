@@ -4,6 +4,7 @@ import { ChuckViewComponent } from './chuck-view/chuck-view.component';
 import { ChuckAddComponent } from './chuck-add/chuck-add.component';
 import { ChuckComponent } from './chuck/chuck.component';
 import { ChuckEditComponent } from './chuck-edit/chuck-edit.component';
+import { ChuckDynamicComponent } from './chuck-dynamic/chuck-dynamic.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: 'edit',
-        component: ChuckEditComponent
+        component: ChuckDynamicComponent//ChuckEditComponent
       }
     ]
   },
