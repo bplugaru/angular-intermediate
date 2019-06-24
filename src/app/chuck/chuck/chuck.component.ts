@@ -14,6 +14,8 @@ export class ChuckComponent implements OnInit {
   public comments = [];
 
   public like = false;
+  public images;
+  
   constructor(
     private chuckService: ChuckService,
     private injector: Injector
@@ -21,12 +23,16 @@ export class ChuckComponent implements OnInit {
 
   ngOnInit() {
     this.getJoke();
+    this.getImages();
   }
 
   getJoke() {
     this.chuckService.getJoke().subscribe(joke => this.joke = joke);
   }
 
+  getImages() {
+    this.images = this.chuckService.getImages();
+  }
   addComment(comment) {
     this.comments.push(comment);
     this.comment = '';

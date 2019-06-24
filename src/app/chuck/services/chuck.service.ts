@@ -40,6 +40,13 @@ export class ChuckService {
 
   }
 
+  getImages(){
+    return [
+      'http://images02.military.com/sites/default/files/styles/full/public/media/veteran-jobs/content-images/2016/03/chucknorris.jpg',
+      'https://m.media-amazon.com/images/M/MV5BNDYwYmJlNGQtN2JiZS00OGRlLWE1ZTctMzExYjkzNGMwN2FjXkEyXkFqcGdeQXVyMTI3MDk3MzQ@._V1_SX1777_CR0,0,1777,756_AL_.jpg',
+      'https://m.media-amazon.com/images/M/MV5BOWIwOTQwNWUtNDg1OC00MDEyLWIxYjgtZmMwYWIxMmNhNmVmXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_.jpg'
+    ];
+  }
   getBio(){
     const bio = window.localStorage.getItem('bio');
     if(bio){
@@ -59,7 +66,6 @@ export class ChuckService {
   }
 
   getErrorMessage(field){
-    console.log(field)
     let error ='';
     if(field.hasError('required')){
       error = `${field.name} is required` 

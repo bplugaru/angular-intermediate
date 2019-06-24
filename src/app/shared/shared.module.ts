@@ -8,6 +8,7 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import { DynamicFieldDirective } from './directives/dynamic-field.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { CarouselDirective } from './directives/carousel.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModu
     SelectComponent,
     DateComponent,
     DynamicFormComponent,
-    DynamicFieldDirective
+    DynamicFieldDirective,
+    CarouselDirective
   ],
   exports: [
     VerifyNameDirective,
@@ -24,7 +26,8 @@ import { MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModu
     SelectComponent,
     DateComponent,
     DynamicFormComponent,
-    DynamicFieldDirective
+    DynamicFieldDirective,
+    CarouselDirective
   ],
   entryComponents: [
     InputComponent,

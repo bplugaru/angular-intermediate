@@ -6,9 +6,12 @@
         <a [routerLink]="['/view']">Chuck Norris</a></mat-card-title>
       <mat-card-subtitle>Dragon breath</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image
-      src="http://images02.military.com/sites/default/files/styles/full/public/media/veteran-jobs/content-images/2016/03/chucknorris.jpg"
-      alt="Photo of Chuck Norris">
+    <ng-container *carousel="let image of images; let ctrl=controller">
+      <img mat-card-image src="{{ image }}" alt="Photo of Chuck Norris">
+      <mat-icon aria-hidden="false" aria-label="go to left" (click)="ctrl.prev()" [ngStyle]="{'cursor': 'pointer'}">keyboard_arrow_left</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="go to right" (click)="ctrl.next()" [ngStyle]="{'cursor': 'pointer'}">keyboard_arrow_right</mat-icon>
+    </ng-container>
+
     <mat-card-content>
       <p>
         {{ joke?.value }}
@@ -25,22 +28,22 @@
     <mat-card-footer>
       <mat-form-field class="comment" appearance="standard">
         <textarea matInput placeholder="Comment" [ngModel]="comment" (ngModelChange)="comment=$event"></textarea>
-  
+
         <mat-icon matSuffix (click)="addComment(comment)">send</mat-icon>
-  
+
       </mat-form-field>
       <ng-container [ngSwitch]="comments.length">
         <h3 *ngSwitchCase="0">No comments no fun</h3>
         <h3 *ngSwitchCase="1">I'm sad:( only one: {{ comments[0] }}</h3>
         <ng-container *ngSwitchDefault>
           <mat-list-item *ngFor="let comment of comments">
-           <h3>{{ comment }}</h3>
+            <h3>{{ comment }}</h3>
           </mat-list-item>
         </ng-container>
       </ng-container>
     </mat-card-footer>
-  
+
   </mat-card>
   <router-outlet></router-outlet>
-  
+
 </div>
